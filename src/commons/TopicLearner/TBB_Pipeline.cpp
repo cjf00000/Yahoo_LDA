@@ -33,10 +33,8 @@
 #include "Context.h"
 
 TBB_Pipeline::TBB_Pipeline(Model_Refiner& refiner) :
-    _refiner(refiner) {
-    Context& context = Context::get_instance();
-    int num_threads = context.get_int("samplerthreads");
-    _init.initialize(num_threads);
+    _refiner(refiner),
+    _init(Context::get_instance().get_int("samplerthreads")) {
 }
 
 TBB_Pipeline::~TBB_Pipeline() { }
