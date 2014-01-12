@@ -328,7 +328,7 @@ void* Unigram_Model_Tester::eval(void* token, double& eval_value) {
         int cnt = local_topic_counts[topic];
         doc_loglikelihood += log_gamma(gal + cnt) - log_gamma(gal);
 
-        LOG_IF(FATAL,isnan(doc_loglikelihood))<< gal << "," << cnt << "," <<_alpha.sum << "," << num_words_in_doc;
+        LOG_IF(FATAL,std::isnan(doc_loglikelihood))<< gal << "," << cnt << "," <<_alpha.sum << "," << num_words_in_doc;
 
         ++ltdInd;
     }

@@ -44,8 +44,8 @@ public:
     }
     virtual ~Hashmap_Array() {
     }
-    typedef unordered_map<Key, Value> act_map;
-    typedef typename unordered_map<Key, Value>::iterator act_map_iter;
+    typedef boost::unordered_map<Key, Value> act_map;
+    typedef typename boost::unordered_map<Key, Value>::iterator act_map_iter;
 
     size_t size() const {
         size_t size = 0;
@@ -148,7 +148,7 @@ private:
     act_map maps[NUM_MAPS];
     word_mutex_t rw_mutexes[NUM_MAPS];
     word_mutex_t structure_mutex;
-    hash<Key> hasher;
+    boost::hash<Key> hasher;
 };
 
 #endif /* HASHMAP_ARRAY_H_ */
