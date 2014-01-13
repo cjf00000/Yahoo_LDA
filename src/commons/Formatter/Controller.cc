@@ -102,22 +102,8 @@ int main(int argc, char *argv[]) {
     }
 
     google::ParseCommandLineFlags(&argc, &argv, true);
-
     google::SetCommandLineOption("logtostderr", "true");
-    const char* pwd = "/tmp";
-    google::SetCommandLineOptionWithMode("log_dir", pwd,
-            google::SET_FLAG_IF_DEFAULT);
 
-    LOG(WARNING)
-            << "----------------------------------------------------------------------";
-    LOG(WARNING) << "Log files are being stored at " << pwd
-            << "/formatter.*";
-    LOG(WARNING)
-            << "----------------------------------------------------------------------";
-
-    string flagsInp = google::CommandlineFlagsIntoString();
-
-    LOG(INFO) << flagsInp;
     if (google::GetCommandLineFlagInfoOrDie("corpus").is_default) {
         LOG(WARNING)
                 << "Assuming that corpus is being piped through stdin. Reading from stdin...";

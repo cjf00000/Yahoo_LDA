@@ -33,12 +33,9 @@ Unigram_Train_Data_Formatter::Unigram_Train_Data_Formatter() {
     _num_words_in_all_docs = 0;
     using namespace boost;
     //Read the stop words into a set
-    stringstream ss;
     for (int i = 0; i < NUM_STP_WRDS; i++) {
-        ss << stopwords[i] << " : ";
         _stopWords.insert(stopwords[i]);
     }
-    LOG(INFO) << ss.str();
     Context& context = Context::get_instance();
     string output_w = context.get_string("output_w");
     if (output_w != "")

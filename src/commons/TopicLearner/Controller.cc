@@ -83,22 +83,7 @@ int main(int argc, char *argv[]) {
     }
 
     google::ParseCommandLineFlags(&argc, &argv, true);
-
     google::SetCommandLineOption("logtostderr", "true");
-    const char* pwd = "/tmp";
-    google::SetCommandLineOptionWithMode("log_dir", pwd,
-            google::SET_FLAG_IF_DEFAULT);
-
-    LOG(WARNING)
-            << "----------------------------------------------------------------------";
-    LOG(WARNING) << "Log files are being stored at " << pwd
-            << "/learnTopics.*";
-    LOG(WARNING)
-            << "----------------------------------------------------------------------";
-
-    string flagsInp = google::CommandlineFlagsIntoString();
-
-    LOG(INFO) << flagsInp << endl;
 
     //Do parameter checking here
     if (!FLAGS_test && !FLAGS_teststream) {
