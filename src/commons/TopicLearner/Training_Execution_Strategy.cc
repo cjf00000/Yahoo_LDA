@@ -71,7 +71,7 @@ void Training_Execution_Strategy::execute() {
         _pipeline.run();
         tbb::tick_count t1 = tbb::tick_count::now();
         LOG(WARNING) << "Iteration " << iter << " done. Took "
-                << (t1 - t0).seconds() / 60 << " mins" << endl;
+                << (t1 - t0).seconds() << " sec" << endl;
         if (compute_loglikelihood) {
             double word_loglikelihood = _model.get_eval();
             double doc_loglikelihood = _pipeline.get_eval();

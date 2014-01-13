@@ -226,8 +226,8 @@ void TopicCounts::compact() {
     if (length > INIT_TC_SIZE + SUBSEQ_ALLOCS && origLength - length
             > INIT_TC_SIZE) {
         //Compact SUBSEQ_ALLOCS of memory
-        LOG(INFO) << "Compacting " << SUBSEQ_ALLOCS
-                << " bytes of memory from TopicCounts";
+        //LOG(INFO) << "Compacting " << SUBSEQ_ALLOCS
+        //        << " bytes of memory from TopicCounts";
         cnt_topic_t* tmp_items = new cnt_topic_t[origLength - SUBSEQ_ALLOCS];
         origLength -= SUBSEQ_ALLOCS;
         memcpy(tmp_items, items, length * sizeof(cnt_topic_t));

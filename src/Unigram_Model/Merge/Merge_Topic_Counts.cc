@@ -66,26 +66,7 @@ int main(int argc, char *argv[]) {
     }
 
     google::ParseCommandLineFlags(&argc, &argv, true);
-
-    google::SetCommandLineOptionWithMode("minloglevel", "1",
-            google::SET_FLAG_IF_DEFAULT);
-    google::SetCommandLineOptionWithMode("stderrthreshold", "1",
-            google::SET_FLAG_IF_DEFAULT);
-
-    const char* pwd = google::StringFromEnv("PWD", "/tmp");
-    google::SetCommandLineOptionWithMode("log_dir", pwd,
-            google::SET_FLAG_IF_DEFAULT);
-
-    LOG(WARNING)
-            << "----------------------------------------------------------------------";
-    LOG(WARNING) << "Log files are being stored at " << pwd
-            << "/formatter.*";
-    LOG(WARNING)
-            << "----------------------------------------------------------------------";
-
-    string flagsInp = google::CommandlineFlagsIntoString();
-
-    LOG(INFO) << flagsInp << endl;
+    google::SetCommandLineOption("logtostderr", "true");
 
     LOG_IF(FATAL,
             google::GetCommandLineFlagInfoOrDie("clientid").is_default
