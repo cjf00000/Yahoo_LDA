@@ -84,12 +84,8 @@ int main(int argc, char *argv[]) {
 
     google::ParseCommandLineFlags(&argc, &argv, true);
 
-    google::SetCommandLineOptionWithMode("minloglevel", "1",
-            google::SET_FLAG_IF_DEFAULT);
-    google::SetCommandLineOptionWithMode("stderrthreshold", "1",
-            google::SET_FLAG_IF_DEFAULT);
-
-    const char* pwd = google::StringFromEnv("PWD", "/tmp");
+    google::SetCommandLineOption("logtostderr", "true");
+    const char* pwd = "/tmp";
     google::SetCommandLineOptionWithMode("log_dir", pwd,
             google::SET_FLAG_IF_DEFAULT);
 

@@ -1,4 +1,5 @@
 bin/
+test/
 
 # Compiled Object files
 *.slo
