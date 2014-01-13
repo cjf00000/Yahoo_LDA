@@ -1,5 +1,5 @@
 SHELL   = /bin/bash
-PROJECT := $(shell readlink $(dir $(lastword $(MAKEFILE_LIST))) -f)
+PROJECT := $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 BIN     = $(PROJECT)/bin
 SRC     = $(PROJECT)/src
 COMMONS = $(SRC)/commons
