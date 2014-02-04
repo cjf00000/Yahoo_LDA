@@ -32,3 +32,6 @@ DistributedMap.cc
 
 # unused files
 *.bak
+
+# java
+*.class

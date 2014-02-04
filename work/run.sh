@@ -1,7 +1,7 @@
 #!/bin/bash
 set -u
 
-#cat $HOME/data/nytimes.dat.human | ../bin/formatter
+#cat $HOME/data/nytimes.human | ../bin/formatter
 
 #server=localhost:10123
 #

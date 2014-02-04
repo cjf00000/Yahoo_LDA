@@ -21,6 +21,12 @@ MERGE_TOPIC_COUNTS = $(BIN)/Merge_Topic_Counts
 CXX      = g++
 CXXFLAGS = -O4 \
            -std=c++11 \
+           -Wall \
+           -Wno-strict-aliasing \
+	   -fno-builtin-malloc \
+           -fno-builtin-calloc \
+           -fno-builtin-realloc \
+	   -fno-builtin-free \
            -fno-omit-frame-pointer
 INCFLAGS = -I$(SRC) \
            -I$(COMMONS) \
